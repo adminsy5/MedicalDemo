@@ -18,33 +18,33 @@ Public Class Form1
             MsgBox(ec.Message)
         End Try
 
-        If TextBoxMid.Text = "" And TextBoxName.Text = "" And ComboBoxType.Text = "- Choose Item -" And TextBoxCompany.Text = "" And TextBoxRate.Text = "" Then
-            MsgBox("All fields are empty", "failed")
+        If TextBoxMid.Text = "" And TextBoxName.Text = "" And ComboBoxType.Text = "" And TextBoxCompany.Text = "" And TextBoxRate.Text = "" Then
+            MsgBox("All fields are empty !")
             Return
         End If
 
         If TextBoxMid.Text = "" Then
-            MsgBox("Please Enter Mid !", "failed")
+            MsgBox("Please Enter Mid !")
             Return
         End If
 
         If TextBoxName.Text = "" Then
-            MsgBox("Name can't be empty !", "failed")
+            MsgBox("Name can't be empty !")
             Return
         End If
 
         If ComboBoxType.Text = "" Then
-            MsgBox("Please select correctly !", "failed")
+            MsgBox("Please Select Type correctly !")
             Return
         End If
 
         If TextBoxCompany.Text = "" Then
-            MsgBox("Company can't choose  !", "failed")
+            MsgBox("enter u r Company !")
             Return
         End If
 
         If TextBoxRate.Text = "" Then
-            MsgBox("Rate Can't be empty !", "failed")
+            MsgBox("Rate Can't be empty !")
             Return
         End If
 
@@ -111,27 +111,27 @@ Public Class Form1
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
         If TextBoxMid.Text = "" Then
-            MsgBox("Please Enter Mid !", "failed")
+            MsgBox("Please Enter Mid !")
             Return
         End If
 
         If TextBoxName.Text = "" Then
-            MsgBox("Name can't be empty !", "failed")
+            MsgBox("Name can't be empty !")
             Return
         End If
 
         If ComboBoxType.Text = "" Then
-            MsgBox("Please select correctly !", "failed")
+            MsgBox("Please select correctly !")
             Return
         End If
 
         If TextBoxCompany.Text = "" Then
-            MsgBox("Company can't choose  !", "failed")
+            MsgBox("Company can't choose  !")
             Return
         End If
 
         If TextBoxRate.Text = "" Then
-            MsgBox("Rate Can't be empty !", "failed")
+            MsgBox("Rate Can't be empty !")
             Return
         End If
 
