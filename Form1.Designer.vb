@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonClear = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.ButtonDelete = New System.Windows.Forms.Button()
@@ -38,13 +39,14 @@ Partial Class Form1
         Me.TextBoxMid = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewReader = New System.Windows.Forms.DataGridView()
-        Me.ButtonClear = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewReader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.ButtonClear)
         Me.GroupBox1.Controls.Add(Me.ButtonUpdate)
         Me.GroupBox1.Controls.Add(Me.ButtonRefresh)
@@ -66,6 +68,15 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Mahavir Medical "
+        '
+        'ButtonClear
+        '
+        Me.ButtonClear.Location = New System.Drawing.Point(510, 430)
+        Me.ButtonClear.Name = "ButtonClear"
+        Me.ButtonClear.Size = New System.Drawing.Size(175, 46)
+        Me.ButtonClear.TabIndex = 18
+        Me.ButtonClear.Text = "Clear"
+        Me.ButtonClear.UseVisualStyleBackColor = True
         '
         'ButtonUpdate
         '
@@ -195,14 +206,14 @@ Partial Class Form1
         Me.DataGridViewReader.Size = New System.Drawing.Size(1272, 597)
         Me.DataGridViewReader.TabIndex = 1
         '
-        'ButtonClear
+        'Label4
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(510, 430)
-        Me.ButtonClear.Name = "ButtonClear"
-        Me.ButtonClear.Size = New System.Drawing.Size(175, 46)
-        Me.ButtonClear.TabIndex = 18
-        Me.ButtonClear.Text = "Clear"
-        Me.ButtonClear.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(815, 173)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(27, 32)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "₹"
         '
         'Form1
         '
@@ -237,4 +248,5 @@ Partial Class Form1
     Friend WithEvents TextBoxCompany As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents ButtonClear As Button
+    Friend WithEvents Label4 As Label
 End Class
