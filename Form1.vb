@@ -159,37 +159,36 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonDelete_Click(sender As Object, e As EventArgs) Handles ButtonDelete.Click
-        Connection = New SqlConnection(conStr)
+        Connection = New SqlConnection("Data Source=MPIYUSH3510-AMD;Initial Catalog=Medical;Integrated Security=true")
         Connection.Open()
 
         If DataGridViewReader.RowCount = 0 Then
-            MsgBox("Unable to deleted, No Data found !", MsgBoxStyle.Critical, "failed")
+            MsgBox("unable to deleted, table is empty !", MsgBoxStyle.Critical, "failed")
             Return
         End If
 
-        If MsgBox("Delete This Record ?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Confirmation") Then Return
+        If MsgBox("Delete record ?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Confirmation") = MsgBoxResult.Cancel Then Return
 
         Try
             If DataGridViewReader.AreAllCellsSelected(0) = True Then
-                sqlCmd = New SqlCommand("deleted from tblMedicine", Connection)
+                sqlCmd = New SqlCommand("delete from tblMedicine", Connection)
                 sqlCmd.ExecuteNonQuery()
+                ButtonRefresh_Click(sender, e)
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch ec As Exception
+            MsgBox(ec.Message)
         End Try
 
         Try
-            For Each row As DataGridViewRow In DataGridViewReader.SelectedCells
+            For Each row As DataGridViewRow In DataGridViewReader.SelectedRows
                 If row.Selected Then
                     sqlCmd = New SqlCommand("delete from tblMedicine where mid = '" & row.DataBoundItem(0).ToString & "'", Connection)
                     sqlCmd.ExecuteNonQuery()
+                    ButtonRefresh_Click(sender, e)
                 End If
             Next
         Catch ex As Exception
-            MsgBox(ex.Message)
         End Try
-        ButtonRefresh_Click(sender, e)
-        ButtonClear_Click(sender, e)
     End Sub
 
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
