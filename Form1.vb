@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Runtime.CompilerServices
 
 Public Class Form1
     Dim conStr As String = "Data Source=MPIYUSH3510-AMD;Initial Catalog=Medical;Integrated Security=true"
@@ -197,5 +198,24 @@ Public Class Form1
         ComboBoxType.SelectedItem = "- Choose Item -"
         TextBoxRate.Clear()
         TextBoxCompany.Clear()
+    End Sub
+
+    Private Sub CheckBoxCondition_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxCondition.CheckedChanged
+        Connection = New SqlConnection(conStr)
+        Connection.Open()
+        If CheckState.Checked Then
+            Try
+                dtAdapater = New SqlDataAdapter("select * from tblMedicine where rate < 500 and type LIKE 'syrup' ", Connection)
+                dtSet = New DataSet()
+                dtAdapater.Fill(dtSet, "tblMedicine")
+                DataGridViewReader.DataSource = dtSet.Tables(0).DefaultView
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+
+        If CheckState.Unchecked Then
+            ButtonRefresh_Click(sender, e)
+        End If
     End Sub
 End Class

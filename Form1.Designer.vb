@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonClear = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
@@ -39,13 +40,14 @@ Partial Class Form1
         Me.TextBoxMid = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewReader = New System.Windows.Forms.DataGridView()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CheckBoxCondition = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewReader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CheckBoxCondition)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.ButtonClear)
         Me.GroupBox1.Controls.Add(Me.ButtonUpdate)
@@ -69,9 +71,18 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Mahavir Medical "
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(815, 173)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(27, 32)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "₹"
+        '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(510, 430)
+        Me.ButtonClear.Location = New System.Drawing.Point(525, 305)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(175, 46)
         Me.ButtonClear.TabIndex = 18
@@ -80,7 +91,7 @@ Partial Class Form1
         '
         'ButtonUpdate
         '
-        Me.ButtonUpdate.Location = New System.Drawing.Point(93, 430)
+        Me.ButtonUpdate.Location = New System.Drawing.Point(93, 436)
         Me.ButtonUpdate.Name = "ButtonUpdate"
         Me.ButtonUpdate.Size = New System.Drawing.Size(175, 46)
         Me.ButtonUpdate.TabIndex = 17
@@ -89,7 +100,7 @@ Partial Class Form1
         '
         'ButtonRefresh
         '
-        Me.ButtonRefresh.Location = New System.Drawing.Point(653, 358)
+        Me.ButtonRefresh.Location = New System.Drawing.Point(780, 371)
         Me.ButtonRefresh.Name = "ButtonRefresh"
         Me.ButtonRefresh.Size = New System.Drawing.Size(175, 46)
         Me.ButtonRefresh.TabIndex = 16
@@ -98,7 +109,7 @@ Partial Class Form1
         '
         'ButtonDelete
         '
-        Me.ButtonDelete.Location = New System.Drawing.Point(953, 430)
+        Me.ButtonDelete.Location = New System.Drawing.Point(953, 436)
         Me.ButtonDelete.Name = "ButtonDelete"
         Me.ButtonDelete.Size = New System.Drawing.Size(175, 46)
         Me.ButtonDelete.TabIndex = 15
@@ -107,7 +118,7 @@ Partial Class Form1
         '
         'ButtonSave
         '
-        Me.ButtonSave.Location = New System.Drawing.Point(395, 358)
+        Me.ButtonSave.Location = New System.Drawing.Point(263, 371)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(175, 46)
         Me.ButtonSave.TabIndex = 14
@@ -206,14 +217,15 @@ Partial Class Form1
         Me.DataGridViewReader.Size = New System.Drawing.Size(1272, 597)
         Me.DataGridViewReader.TabIndex = 1
         '
-        'Label4
+        'CheckBoxCondition
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(815, 173)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(27, 32)
-        Me.Label4.TabIndex = 19
-        Me.Label4.Text = "₹"
+        Me.CheckBoxCondition.AutoSize = True
+        Me.CheckBoxCondition.Location = New System.Drawing.Point(486, 446)
+        Me.CheckBoxCondition.Name = "CheckBoxCondition"
+        Me.CheckBoxCondition.Size = New System.Drawing.Size(287, 36)
+        Me.CheckBoxCondition.TabIndex = 20
+        Me.CheckBoxCondition.Text = "Syrup Rates Below 500"
+        Me.CheckBoxCondition.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -249,4 +261,5 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents ButtonClear As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents CheckBoxCondition As CheckBox
 End Class
