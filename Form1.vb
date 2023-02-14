@@ -60,7 +60,7 @@ Public Class Form1
             sqlCmd.ExecuteNonQuery()
             'MsgBox("Table Created !")
         Catch ec As Exception
-            MsgBox(ec.Message)
+            'MsgBox(ec.Message)
         End Try
     End Sub
 
@@ -217,5 +217,11 @@ Public Class Form1
         If CheckState.Unchecked Then
             ButtonRefresh_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        MsgBox("Admin Piyush !")
+        Dim str As String = "https://mpiyush3510.carrd.co/"
+        Diagnostics.Process.Start("C:\Program Files\Google\Chrome\Application\chrome.exe", str)
     End Sub
 End Class

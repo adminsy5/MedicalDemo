@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CheckBoxCondition = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonClear = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
@@ -40,7 +41,9 @@ Partial Class Form1
         Me.TextBoxMid = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewReader = New System.Windows.Forms.DataGridView()
-        Me.CheckBoxCondition = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewReader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,15 +69,25 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(63, 56)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1272, 552)
+        Me.GroupBox1.Size = New System.Drawing.Size(1070, 552)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Mahavir Medical "
         '
+        'CheckBoxCondition
+        '
+        Me.CheckBoxCondition.AutoSize = True
+        Me.CheckBoxCondition.Location = New System.Drawing.Point(373, 466)
+        Me.CheckBoxCondition.Name = "CheckBoxCondition"
+        Me.CheckBoxCondition.Size = New System.Drawing.Size(287, 36)
+        Me.CheckBoxCondition.TabIndex = 20
+        Me.CheckBoxCondition.Text = "Syrup Rates Below 500"
+        Me.CheckBoxCondition.UseVisualStyleBackColor = True
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(815, 173)
+        Me.Label4.Location = New System.Drawing.Point(723, 175)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(27, 32)
         Me.Label4.TabIndex = 19
@@ -82,69 +95,84 @@ Partial Class Form1
         '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(525, 305)
+        Me.ButtonClear.Image = Global.MedicalDemo.My.Resources.Resources.clear_32
+        Me.ButtonClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonClear.Location = New System.Drawing.Point(467, 387)
         Me.ButtonClear.Name = "ButtonClear"
-        Me.ButtonClear.Size = New System.Drawing.Size(175, 46)
+        Me.ButtonClear.Size = New System.Drawing.Size(110, 46)
         Me.ButtonClear.TabIndex = 18
         Me.ButtonClear.Text = "Clear"
+        Me.ButtonClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonClear.UseVisualStyleBackColor = True
         '
         'ButtonUpdate
         '
-        Me.ButtonUpdate.Location = New System.Drawing.Point(93, 436)
+        Me.ButtonUpdate.Image = Global.MedicalDemo.My.Resources.Resources.update_32
+        Me.ButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonUpdate.Location = New System.Drawing.Point(197, 456)
         Me.ButtonUpdate.Name = "ButtonUpdate"
-        Me.ButtonUpdate.Size = New System.Drawing.Size(175, 46)
+        Me.ButtonUpdate.Size = New System.Drawing.Size(134, 46)
         Me.ButtonUpdate.TabIndex = 17
         Me.ButtonUpdate.Text = "Update"
+        Me.ButtonUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonUpdate.UseVisualStyleBackColor = True
         '
         'ButtonRefresh
         '
-        Me.ButtonRefresh.Location = New System.Drawing.Point(780, 371)
+        Me.ButtonRefresh.Image = Global.MedicalDemo.My.Resources.Resources.refresh_32
+        Me.ButtonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonRefresh.Location = New System.Drawing.Point(620, 387)
         Me.ButtonRefresh.Name = "ButtonRefresh"
-        Me.ButtonRefresh.Size = New System.Drawing.Size(175, 46)
+        Me.ButtonRefresh.Size = New System.Drawing.Size(134, 46)
         Me.ButtonRefresh.TabIndex = 16
         Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonRefresh.UseVisualStyleBackColor = True
         '
         'ButtonDelete
         '
-        Me.ButtonDelete.Location = New System.Drawing.Point(953, 436)
+        Me.ButtonDelete.Image = Global.MedicalDemo.My.Resources.Resources.remove_32
+        Me.ButtonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonDelete.Location = New System.Drawing.Point(714, 456)
         Me.ButtonDelete.Name = "ButtonDelete"
-        Me.ButtonDelete.Size = New System.Drawing.Size(175, 46)
+        Me.ButtonDelete.Size = New System.Drawing.Size(125, 46)
         Me.ButtonDelete.TabIndex = 15
         Me.ButtonDelete.Text = "Delete"
+        Me.ButtonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonDelete.UseVisualStyleBackColor = True
         '
         'ButtonSave
         '
-        Me.ButtonSave.Location = New System.Drawing.Point(263, 371)
+        Me.ButtonSave.Image = Global.MedicalDemo.My.Resources.Resources.save_32
+        Me.ButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonSave.Location = New System.Drawing.Point(306, 387)
         Me.ButtonSave.Name = "ButtonSave"
-        Me.ButtonSave.Size = New System.Drawing.Size(175, 46)
+        Me.ButtonSave.Size = New System.Drawing.Size(110, 46)
         Me.ButtonSave.TabIndex = 14
         Me.ButtonSave.Text = "Save"
+        Me.ButtonSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonSave.UseVisualStyleBackColor = True
         '
         'ComboBoxType
         '
         Me.ComboBoxType.FormattingEnabled = True
         Me.ComboBoxType.Items.AddRange(New Object() {"- Choose Item -", "tablet", "capsule", "syrup "})
-        Me.ComboBoxType.Location = New System.Drawing.Point(207, 243)
+        Me.ComboBoxType.Location = New System.Drawing.Point(165, 225)
         Me.ComboBoxType.Name = "ComboBoxType"
         Me.ComboBoxType.Size = New System.Drawing.Size(242, 40)
         Me.ComboBoxType.TabIndex = 12
         '
         'TextBoxRate
         '
-        Me.TextBoxRate.Location = New System.Drawing.Point(848, 170)
+        Me.TextBoxRate.Location = New System.Drawing.Point(756, 172)
         Me.TextBoxRate.Name = "TextBoxRate"
-        Me.TextBoxRate.Size = New System.Drawing.Size(280, 39)
+        Me.TextBoxRate.Size = New System.Drawing.Size(220, 39)
         Me.TextBoxRate.TabIndex = 9
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(712, 170)
+        Me.Label5.Location = New System.Drawing.Point(620, 172)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 32)
         Me.Label5.TabIndex = 8
@@ -152,15 +180,15 @@ Partial Class Form1
         '
         'TextBoxCompany
         '
-        Me.TextBoxCompany.Location = New System.Drawing.Point(848, 102)
+        Me.TextBoxCompany.Location = New System.Drawing.Point(756, 102)
         Me.TextBoxCompany.Name = "TextBoxCompany"
-        Me.TextBoxCompany.Size = New System.Drawing.Size(280, 39)
+        Me.TextBoxCompany.Size = New System.Drawing.Size(220, 39)
         Me.TextBoxCompany.TabIndex = 7
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(712, 102)
+        Me.Label6.Location = New System.Drawing.Point(611, 102)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(116, 32)
         Me.Label6.TabIndex = 6
@@ -169,7 +197,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(93, 243)
+        Me.Label3.Location = New System.Drawing.Point(51, 228)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 32)
         Me.Label3.TabIndex = 4
@@ -177,7 +205,7 @@ Partial Class Form1
         '
         'TextBoxName
         '
-        Me.TextBoxName.Location = New System.Drawing.Point(207, 177)
+        Me.TextBoxName.Location = New System.Drawing.Point(165, 163)
         Me.TextBoxName.Name = "TextBoxName"
         Me.TextBoxName.Size = New System.Drawing.Size(412, 39)
         Me.TextBoxName.TabIndex = 3
@@ -185,7 +213,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(93, 177)
+        Me.Label2.Location = New System.Drawing.Point(51, 160)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 32)
         Me.Label2.TabIndex = 2
@@ -193,7 +221,7 @@ Partial Class Form1
         '
         'TextBoxMid
         '
-        Me.TextBoxMid.Location = New System.Drawing.Point(207, 109)
+        Me.TextBoxMid.Location = New System.Drawing.Point(165, 102)
         Me.TextBoxMid.Name = "TextBoxMid"
         Me.TextBoxMid.Size = New System.Drawing.Size(231, 39)
         Me.TextBoxMid.TabIndex = 1
@@ -201,7 +229,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(93, 109)
+        Me.Label1.Location = New System.Drawing.Point(51, 102)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 32)
         Me.Label1.TabIndex = 0
@@ -214,32 +242,54 @@ Partial Class Form1
         Me.DataGridViewReader.Name = "DataGridViewReader"
         Me.DataGridViewReader.RowHeadersWidth = 82
         Me.DataGridViewReader.RowTemplate.Height = 41
-        Me.DataGridViewReader.Size = New System.Drawing.Size(1272, 597)
+        Me.DataGridViewReader.Size = New System.Drawing.Size(1070, 597)
         Me.DataGridViewReader.TabIndex = 1
         '
-        'CheckBoxCondition
+        'Label7
         '
-        Me.CheckBoxCondition.AutoSize = True
-        Me.CheckBoxCondition.Location = New System.Drawing.Point(486, 446)
-        Me.CheckBoxCondition.Name = "CheckBoxCondition"
-        Me.CheckBoxCondition.Size = New System.Drawing.Size(287, 36)
-        Me.CheckBoxCondition.TabIndex = 20
-        Me.CheckBoxCondition.Text = "Syrup Rates Below 500"
-        Me.CheckBoxCondition.UseVisualStyleBackColor = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(393, 1253)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(397, 32)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "© 2021-2023 Sutex Developers, Inc."
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(800, 1297)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(84, 32)
+        Me.LinkLabel1.TabIndex = 3
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Admin"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(273, 1297)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(530, 32)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "If you have any questions, please let me know ~"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 32.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1417, 1303)
+        Me.ClientSize = New System.Drawing.Size(1202, 1369)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DataGridViewReader)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "tblMedicine"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridViewReader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -262,4 +312,7 @@ Partial Class Form1
     Friend WithEvents ButtonClear As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents CheckBoxCondition As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Label8 As Label
 End Class
